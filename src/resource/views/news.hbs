@@ -1,0 +1,120 @@
+<nav id="p-navbar" class="navbar navbar-expand-md navbar-dark ">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars fa-md"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Browse <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Genre</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Year</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div id="p-jumbotron" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <div class="card-columns p-card-big-columns">
+
+      <div class="p-card-loading" v-if="loading">
+        <div class="ph-item ph-big" v-for="mov in 3">
+          <div class="ph-col-12">
+            <div class="ph-picture"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" v-for="mov in movies" :key="mov.id">
+        <img class="card-img-top" :src={{this.image}} :alt="mov.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ this.slug }}</h5>
+          <div class="card-badges">
+            <span v-for="genre in mov.genres">
+              <p-genre-badge :name="genre"></p-genre-badge>&nbsp;
+            </span>
+          </div>
+          <p class="card-rate"><i class="fas fa-star text-warning"></i> {{ mov.rating }} <sub>/10</sub></p>
+          <p class="card-text">{{ mov.summary }}</p>
+          <button class="btn btn-block" data-toggle="modal" data-target="#p-player-modal"><i class="fa fa-play" aria-label="icon-play"></i></button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="background-container">
+    <div class="background-filter"></div>
+    <img src="https://wallpaperaccess.com/full/1512223.jpg" class="img" alt="Movie Collage">
+  </div>
+</div>
+
+<div id="p-movie-list" role="main" class="container p-container-movie-list">
+  <!--   search box -->
+  <div class="row">
+    <div class="col">
+      <div class="input-group input-group-lg mb-3">
+        <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div role="separator" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </div>
+
+        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- card movie list -->
+  <div class="row">
+    <div class="col">
+      <div class="card-columns p-card-small-columns">
+        <div class="p-card-loading" v-if="loading">
+          <div class="ph-item ph-small" v-for="mov in 20">
+            <div class="ph-col-12">
+              <div class="ph-picture"></div>
+            </div>
+          </div>
+        </div>
+        <div class="card" v-for="mov in movies" :key="mov.id">
+          <img class="card-img-top" :src="mov.large_cover_image" :alt="mov.title">
+          <div class="card-body">
+            <h5 class="card-title">{{ this.slug }}</h5>
+            <p class="card-rate"><i class="fas fa-star text-warning"></i> {{ mov.rating }} <sub>/10</sub></p>
+            <button class="btn"><i class="fa fa-play" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--   pagination -->
+  <div class="row">
+    <div class="col">
+      <nav aria-label="movie navigation">
+        <ul class="pagination justify-content-center pagination-lg">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="/">1</a></li>
+          <li class="page-item"><a class="page-link" href="/">2</a></li>
+          <li class="page-item"><a class="page-link" href="/">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="/">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

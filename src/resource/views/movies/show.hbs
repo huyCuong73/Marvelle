@@ -1,0 +1,114 @@
+ <div class="mt-4 container-fluid">
+    <div class="row col-lg-12">
+        <div class="col-lg-9">
+            <div class = "video" >
+                <video id="videoPlayer" height="90%" width="100%" controls loop autoplay>
+                    <source src="/video/s.mp4" type="video/mp4" />
+                    <track label="English" kind="subtitles" srclang="en" src="/sub/sub.vtt">
+                    </video>
+            </div>
+        </div>
+        <div class=" col-lg-3   ">
+            <div id="speaking" aria-live="rude">
+            </div>
+            <div id="transcriptContainer" class="lol">
+                <div id="transcriptText" class="a">
+                    <p id="c1" class="cue" data-time="0.0" aria-live="rude" tabindex="1">
+                        Mine & Tolga Wedding First Dance 13.12.2014
+                    </p>
+                    <p id="c2" class="cue" data-time="3.0"  tabindex="1">
+                        Fly me to the moon
+                        <p id="c3" class="cue" data-time="6.0"  tabindex="1">
+                            And let me play among the stars
+                        </p>
+                        <p id="c4" class="cue" data-time="11.0" tabindex="1">
+                            Let me see what spring is like
+                        </p>
+                        <p id="c5" class="cue" data-time="14.0" tabindex="1">
+                            On Jupiter and Mars
+                        </p>
+                        <p id="c6" class="cue" data-time="19.0" aria-live="rude"tabindex="1">
+                            In other words hold my hand
+                        </p>
+                        <p id="c7" class="cue" data-time="27.0"  tabindex="1">
+                            In other words baby kiss me
+                        </p>
+                        <p id="c8" class="cue" data-time="35.0"  tabindex="1">
+                            Fill my life with song
+                        </p>
+                        <p id="c9" class="cue" data-time="38.0"  tabindex="1">
+                            And let me sing forevermore
+                        </p>
+                        <p id="c10" class="cue" data-time="44.0" tabindex="1">
+                            You are all I hope for
+                        </p>
+                        <p id="c11" class="cue" data-time="47.0" tabindex="1">
+                            All I worship and adore
+                        </p>
+                        <p id="c12" class="cue" data-time="52.0" aria-live="rude"tabindex="1">
+                            In other words please be true
+                        </p>
+                        <p id="c13" class="cue" data-time="60.0"  tabindex="1">
+                            In other words I love you
+                        </p>
+                        <p id="c13" class="cue" data-time="60.0"  tabindex="1">
+                            In other words I love you
+                        </p>
+                        <p id="c13" class="cue" data-time="60.0"  tabindex="1">
+                            In other words I love you
+                        </p>
+                        <p id="c13" class="cue" data-time="60.0"  tabindex="1">
+                            In other words I love you
+                        </p>
+                        </div>
+                    </div>
+                    <script>
+                        window.onload = function() {
+                            // get video element
+                            var video = document.getElementsByTagName("video")[0];
+                            var transcript = document.getElementById("transcriptContainer");
+                            var trans_text = document.getElementById("transcriptText");
+                            var speaking = document.getElementById("speaking");
+                            var current = -1;
+
+                            // register events for the clicks on the text
+                            var cues = document.getElementsByClassName("cue");
+                            for (i=0; i<cues.length; i++) {
+                                cues[i].addEventListener("click", function(evt) {
+                                    var start = parseFloat(this.getAttribute("data-time"));
+                                    video.currentTime = start;
+                                    video.play();
+                                }, false);
+                            }
+
+                            // pause video as you mouse over transcript
+
+
+                            video.addEventListener("timeupdate", function(evt) {
+                                if (video.paused || video.ended) {
+                                    return;
+                                }
+                                // scroll to currently playing time offset
+                                for (i=0; i<cues.length; i++) {
+                                    var cueTime = cues[i].getAttribute("data-time");
+                                    if (cues[i].className.indexOf("current") == -1 &&
+                                    video.currentTime >= parseFloat(cueTime) &&
+                                    video.currentTime < parseFloat(cueTime)) {
+                                        trans_text.scrollTop =
+                                        cues[i].offsetTop - trans_text.offsetTop;
+                                        if (current >= 0) {
+                                            cues[current].classList.remove("current");
+                                        }
+                                        cues[i].className += " current";
+                                        current = i;
+                                        if (cues[i].getAttribute("aria-live") == "rude") {
+                                            speaking.innerHTML = cues[i].innerHTML;
+                                        }
+                                    }
+                                }
+                            }, false);
+                        };
+                    </script>
+            </div>
+    </div>
+ </div>
