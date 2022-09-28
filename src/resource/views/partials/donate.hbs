@@ -1,0 +1,251 @@
+{{!-- <div class="modall" id="modall">
+    <div class="modalheader">
+        <div class="closebutton">
+            <img class="" id="closebutton" src="/icon/close-button.svg" alt="">
+        </div>
+
+    </div>
+    <div class="box-hello"><img class="thanks" src="/icon/mewmeww.svg" alt=""></div>
+    <div class="modalbody" id="modalbody">
+
+        <div class="content">
+
+            <p style="text-align:center; margin:0;">LOVE YOU ALL 3000!!!</p>
+        </div>
+        <div class="donateWrapper">
+            <div class="wrapper">
+
+                <div class="donate">
+                    <div class="drop" id="drop">
+                        <div class="bank-ic"><img src="/icon/bank-icon.svg" alt=""></div>
+                        <div class="bank ">Chuyển khoản ngân hàng</div>
+                        <button type="button" class="detail" id="detail"></button>
+                    </div>
+                    <div class="trans">
+                        Chuyển khoản ngân hàng với thông tin sau:<br />
+                        &emsp;Số tài khoản: <small id="stk"
+                            style="font-weight: bold; font-size:12pt;">0877783958</small> <button
+                            onclick="copy()">Copy</button><br />
+                        &emsp;Chủ tài khoản: <small style="font-weight: bold; font-size:12pt;">Trịnh Huy
+                            Cường</small><br />
+                        Ngân hàng: MB - Ngân hàng Quân đội
+                    </div>
+                </div>
+
+                <div class="donate">
+                    <div class="drop" id="drop2">
+                        <div class="bank-ic"><img src="/icon/MoMo_Logo.png" alt=""></div>
+                        <div class="bank ">Ví MoMo</div>
+                        <button type="button" class="detail" id="detail2"></button>
+                    </div>
+                    <div class="trans">
+                        Chuyển khoản MOMO với thông tin sau:<br />
+                        &emsp;Số tài khoản: <small id="stkm"
+                            style="font-weight: bold; font-size:12pt;">0339570042</small> <button
+                            onclick="copym()">Copy</button><br />
+                        &emsp;Chủ tài khoản: <small style="font-weight: bold; font-size:12pt;">Nguyễn Văn
+                            Hoàng</small><br /> <br>
+                        QR momo code:
+                        <div class="momo-code"><img src="/icon/code-momo.png" alt=""></div>
+
+                    </div>
+                </div>
+                <p style="padding:5px; color:aliceblue; font-weight:bold">Chúc mọi người xem phim và học tập vui vẻ!!!
+                </p>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+
+
+<div id="overlay">
+
+</div>
+
+
+<script>
+    function copy() {
+        var copy = document.getElementById("stk")
+        var temp = copy.innerText;
+        var stk = document.createElement("input");
+        stk.type = "text";
+        stk.value = temp;
+        document.body.appendChild(stk);
+        stk.select();
+        document.execCommand("Copy");
+
+        document.body.removeChild(stk);
+    };
+
+    function copym() {
+        var copy = document.getElementById("stkm")
+        var temp = copy.innerText;
+        var stk = document.createElement("input");
+        stk.type = "text";
+        stk.value = temp;
+        document.body.appendChild(stk);
+        stk.select();
+        document.execCommand("Copy");
+
+        document.body.removeChild(stk);
+    };
+
+    var drop = document.getElementById('drop')
+    var drop2 = document.getElementById('drop2')
+    drop.addEventListener('click', () => {
+        var btn = document.getElementById("detail")
+        const accordionContent = drop.nextElementSibling;
+
+        btn.classList.toggle('detail--active');
+
+        if (btn.classList.contains('detail--active')) {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+        } else {
+            setTimeout(accordionContent.style.maxHeight = 0, 3000);
+            accordionContent.style.maxHeight = 0;
+        }
+    })
+    drop2.addEventListener('click', () => {
+        var btn = document.getElementById("detail2")
+        const accordionContent = drop2.nextElementSibling;
+
+        btn.classList.toggle('detail--active');
+
+        if (btn.classList.contains('detail--active')) {
+            accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+        } else {
+            setTimeout(accordionContent.style.maxHeight = 0, 3000);
+            accordionContent.style.maxHeight = 0;
+        }
+    })
+
+    var modal = document.getElementById("modall")
+    var overlay = document.getElementById("overlay")
+    setTimeout(function () {
+        modal.style.display = "block"
+        overlay.style.display = "block"
+
+        var videoPlayer = document.getElementById("videoPlayer");
+        var btnPlay = document.getElementById("btnPlay");
+        videoPlayer.pause();
+        btnPlay.innerHTML = '<img src="/icon/playButton.svg">'
+
+    }, 1800000)
+    var cls = document.getElementById("closebutton")
+    cls.addEventListener("click", function () {
+
+        console.log("modal")
+        modal.style.display = "none"
+        overlay.style.display = "none"
+    })
+
+
+</script>
+
+
+
+
+
+ --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var oos = document.getElementById("oos");
+    var box = document.getElementById("radio-box");
+    var engsubVideo = document.getElementById("engsubVideo")
+    var vietsubVideo = document.getElementById("vietsubVideo")
+    var checkbox1 = document.getElementById("radio-1");
+    var checkbox2 = document.getElementById("radio-2");
+    var checkbox3 = document.getElementById("radio-3");
+    var checkbox4 = document.getElementById("radio-4");
+
+    oos.addEventListener("click", function () {
+        if (box.style.display == "none") {
+            box.style.display = "block"
+        } else {
+            box.style.display = "none"
+        }
+    })
+
+    checkbox1.addEventListener("click", function () {
+        checkbox1.checked === true
+        console.log('wdw')
+        engsubVideo.style.display = "block"
+        vietsubVideo.style.display = "block"
+        engsubVideo.style.marginBottom = "0"
+        vietsubVideo.classList.remove("only");
+        oos.innerHTML = '<img src="/icon/on-sub.svg">'
+        box.style.display = "none"
+
+    })
+    checkbox2.addEventListener("click", function () {
+        checkbox2.checked === true
+        console.log('hw')
+        engsubVideo.style.display = "none"
+        vietsubVideo.style.display = "block"
+        vietsubVideo.classList.add("only");
+        oos.innerHTML = '<img src="/icon/on-sub.svg">'
+        box.style.display = "none"
+
+    })
+
+    checkbox3.addEventListener("click", function () {
+        checkbox3.checked === true
+        console.log('hwg')
+        engsubVideo.style.display = "block"
+        engsubVideo.style.marginBottom = "2%"
+        vietsubVideo.style.display = "none"
+        oos.innerHTML = '<img src="/icon/on-sub.svg">'
+        box.style.display = "none"
+
+    })
+    checkbox4.addEventListener("click", function () {
+        checkbox3.checked === true
+        console.log('hwg')
+        engsubVideo.style.display = "none"
+        vietsubVideo.style.display = "none"
+        oos.innerHTML = '<img src="/icon/off-sub.svg">'
+        box.style.display = "none"
+
+    })
+
+</script>

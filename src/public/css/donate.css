@@ -1,0 +1,187 @@
+#modall {
+    position: fixed;
+    display: none;
+    width: 55vw;
+    height: 85vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: #313131;
+    font-size: 1.5vw;
+}
+
+
+
+.closebutton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: white 4px solid;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    
+    top:-50px;
+    
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 100;
+   
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+
+.closebutton img{
+    width: 50%;
+}
+
+.modalbody {
+    width: 100%;
+    height: 65%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+.content{
+    position: relative;
+    padding: 2% 2% 3% 2% ;
+    border: 3px;
+    font-size: 12pt;
+    font-weight: bold;
+    background-color: aliceblue;
+    margin: 0;
+    border-style: inset;
+    
+}
+.box-hello{
+    width: 100%;
+    height: 30%;
+    background-color: rgb(221, 215, 32);
+    border-radius: 20px 20px 0 0;
+}
+.thanks{
+    padding-top: 5px;
+    position: absolute;
+    width: 55vmin;
+    height: 30%;
+    right: 0;
+    
+}
+.trans{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s;
+    padding-left: 2px;
+    width: 100%;
+    position: relative;
+    font-size: 12pt;
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.donateWrapper{
+    position: relative;
+    margin-top: 1%;
+    width: 98%;
+    margin-left: 1%;
+    /* height: 40%; */
+}
+.wrapper{
+    position: relative;
+}
+.donate{
+    width: 100%;
+    cursor: pointer ;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 3px;
+    border: black 1px solid;
+    color: white;
+    background-color: #525252;
+}
+.bank{
+    font-family: 'Glyphicons Halflings';
+    width: 72%;
+    padding-left:2% ;
+    display: inline-block;
+}
+.detail{
+    width: 10%;
+    margin-left: 5%;
+    border: none;
+    outline: none;
+    background-color: white;
+    display: inline-block;
+    height: 100%;
+    color: aliceblue;
+    background-color: #525252;
+}
+.detail::after {
+    content: '▼';
+    transform: scale(0.5);
+}
+
+.detail--active::after {
+    content: "▲";
+}
+.bank-ic{
+    display: inline-block;
+    width:6%;
+}
+.bank-ic img{
+    width: 100%;
+}
+
+.momo-code{
+    width: 30%;
+    margin-left: 35%;
+}
+.momo-code img{
+    width: 100%;
+}
+
+
+@media screen and (max-width:800px) {
+    #modall {
+        top: 45%;
+        width: 75vw;
+        height: 65vh;
+        font-size: 4vw;
+    }
+    .box-hello{
+        height: 18%;
+    }
+    .thanks{
+        height: 18%;
+    }
+    .modalbody{
+        height: 78%;
+    }
+}

@@ -1,19 +1,357 @@
-<div class="mt-4">
-    <h1 style="color: aliceblue;">coi đê</h1>
-        <div class="row gy-3">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-        {{#each movies}}
+<head>
+    <meta charset="utf-8" />
+    {{!-- <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, width=device-width" /> --}}
+    <link rel="shortcut icon" href="/icon/final.ico" />
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/videoLoader.css">
+    <link rel="stylesheet" href="/css/note.css">
+    <link rel="stylesheet" href="/css/donate.css">
+    <link rel="stylesheet" href="/css/language.css">
+    
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARVELEnglishLearing | Học tiếng anh qua phim Marvel </title>
+    <meta property="og:url" content="https://marvelenglishlearning.com/">
+  <meta property="og:image" content="https://image.thanhnien.vn/w660/Uploaded/2022/pwivoviu/2019_03_11/marvel_dtnw.jpg"/>
+  <meta property="og:description" content="Học tiếng anh qua phim Marvel với phụ đề chi tiết">
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9X05E589LK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        <div class="col-sm-6 col-lg-3">
-             <div class="card bg-transparent ratio ratio-16x9">
-                 <div class="full-hd-icon"><img src="/image/logo.svg" alt=""></div>
-                 <div class="play-button"><img src="/image/hoang.svg" alt=""></div>
-                <img src="page/{{this.image}}" class="card-img-top " alt="...">
-                <div class="card-title">{{this.name}}</div>
+  gtag('config', 'G-9X05E589LK');
+
+</script>
+</head>
+
+<body>
+    <div class="app">
+
+        <div>
+
+  <header>
+  {{>header}}
+</header>
+
+<div class="slider">
+  <div class="slide_viewer">
+    <div class="slide_group">
+      <div class="slide"><a href="/phase3/avengers-endgame-2019">
+          <img src="https://wallpapercave.com/wp/wp3891830.jpg" alt="">
+        </a></div>
+      <div class="slide">
+        <a href="/phase3/avengers-infinity-war-2018"></a><img src="https://cdn.bestmovie.it/wp-content/uploads/2018/10/coverlg_home-2.jpg" alt=""></a>
+      </div>
+      <div class="slide">
+        <a href="/phase3/avengers-age-of-ultron-2018"></a><img src="https://wallpapercave.com/wp/wp1818455.jpg" alt=""></a>
+      </div>
+      <div class="slide">
+        <a href="/phase3/the-avengers-2018"></a><img src="https://wallpaperaccess.com/full/311268.jpg" alt=""></a>
+
+      </div>
+    </div>
+  </div>
+  <div class="slide_buttons">
+    <div class="all-buttons"></div>
+  </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+  $('.slider').each(function () {
+    var $this = $(this);
+    var $group = $this.find('.slide_group');
+    var $slides = $this.find('.slide');
+    var bulletArray = [];
+    var currentIndex = 0;
+    var timeout;
+
+    function move(newIndex) {
+      var animateLeft, slideLeft;
+
+      advance();
+
+      if ($group.is(':animated') || currentIndex === newIndex) {
+        return;
+      }
+
+      bulletArray[currentIndex].removeClass('active');
+      bulletArray[newIndex].addClass('active');
+
+      if (newIndex > currentIndex) {
+        slideLeft = '100%';
+        animateLeft = '-100%';
+      } else {
+        slideLeft = '-100%';
+        animateLeft = '100%';
+      }
+
+      $slides.eq(newIndex).css({
+        display: 'block',
+        left: slideLeft
+      });
+      $group.animate({
+        left: animateLeft
+      }, function () {
+        $slides.eq(currentIndex).css({
+          display: 'none'
+        });
+        $slides.eq(newIndex).css({
+          left: 0
+        });
+        $group.css({
+          left: 0
+        });
+        currentIndex = newIndex;
+      });
+    }
+
+    function advance() {
+      clearTimeout(timeout);
+      timeout = setTimeout(function () {
+        if (currentIndex < ($slides.length - 1)) {
+          move(currentIndex + 1);
+        } else {
+          move(0);
+        }
+      }, 4000);
+    }
+
+    $('.next_btn').on('click', function () {
+      if (currentIndex < ($slides.length - 1)) {
+        move(currentIndex + 1);
+      } else {
+        move(0);
+      }
+    });
+
+    $('.previous_btn').on('click', function () {
+      if (currentIndex !== 0) {
+        move(currentIndex - 1);
+      } else {
+        move(3);
+      }
+    });
+
+    $.each($slides, function (index) {
+      var $button = $('<div class="slide_btn">⬤</div>');
+
+      if (index === currentIndex) {
+        $button.addClass('active');
+      }
+      $button.on('click', function () {
+        move(index);
+      }).appendTo('.all-buttons');
+      bulletArray.push($button);
+    });
+
+    advance();
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="all">
+  <div class="allfilm">
+    <div class="mt-4 container">
+      <div class="phase">
+        <p style="color: aliceblue; text-align:center;   height:100%;">PHASE 1(2008-2012)</p>
+      </div>
+      <div class="row gy-3">
+
+        {{#each movies1}}
+
+        <div class="col-6 col-xs-6 col-sm-4 col-md-4 col-lg-3 ">
+          <a href="/phase1/{{this.title}}">
+            <div class="card bg-transparent ratio ratio-16x9">
+
+              <div class="full-hd-icon"><img src="/icon/M3.svg" alt=""></div>
+              <div class="play-button"><img src="/icon/playbutton3.svg" alt=""></div>
+              <img src="/img/{{this.image}}" class="card-img-top  " alt="...">
+              <div class="card-title">
+                {{this.name}}
+              </div>
             </div>
+          </a>
+
         </div>
 
         {{/each}}
 
+      </div>
+
+      <div class="phase">
+        <p style="color: aliceblue; text-align:center;   height:100%;">PHASE 2(2012-2015)</p>
+      </div>
+      
+      <div class="row gy-3">
+
+        {{#each movies2}}
+
+        <div class="col-6 col-xs-6 col-sm-4 col-md-4 col-lg-3 ">
+          <a href="/phase2/{{this.title}}">
+            <div class="card bg-transparent ratio ratio-16x9">
+              
+              <div class="full-hd-icon"><img src="/icon/M3.svg" alt=""></div>
+              <div class="play-button"><img src="/icon/playbutton3.svg" alt=""></div>
+              <img src="/img/{{this.image}}" class="card-img-top  " alt="...">
+              <div class="card-title">
+                {{this.name}}
+              </div>
+            </div>
+          </a>
+
+        </div>
+        
+
+        {{/each}}
+
+      </div>
+
+      <div class="phase">
+        <p style="color: aliceblue; text-align:center;  height:100%;">PHASE 3(2016-2019)</p>
+      </div>
+      <div class="row gy-3">
+
+        {{#each movies3}}
+
+        <div class="col-6 col-xs-6 col-sm-4 col-md-4 col-lg-3 ">
+          <a href="/phase3/{{this.title}}">
+            <div class="card bg-transparent ratio ratio-16x9">
+
+              <div class="full-hd-icon"><img src="/icon/M3.svg" alt=""></div>
+              <div class="play-button"><img src="/icon/playbutton3.svg" alt=""></div>
+              <img src="/img/{{this.image}}" class="card-img-top  " alt="...">
+              <div class="card-title">
+                {{this.name}}
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        {{/each}}
+
+      </div>
+
+      <div class="phase">
+        <p style="color: aliceblue; text-align:center;   height:100%;">Phase 4(2021- )</p>
+      </div>
+      <div class="row gy-3">
+
+        {{#each movies4}}
+
+        <div class="col-6 col-xs-6 col-sm-4 col-md-4 col-lg-3 ">
+          <a href="/phase4/{{this.title}}">
+            <div class="card bg-transparent ratio ratio-16x9">
+
+              <div class="full-hd-icon"><img src="/icon/M3.svg" alt=""></div>
+              <div class="play-button"><img src="/icon/playbutton3.svg" alt=""></div>
+              <img src="/img/{{this.image}}" class="card-img-top  " alt="...">
+              <div class="card-title">
+                {{this.name}}
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+        {{/each}}
+      </div>
     </div>
+  </div>
+  <div class="filmsub">
+    <p style="color:aliceblue; margin-bottom: 1.5vmin; padding-bottom:5px; padding-top:5px; font-size:1.5vw; background-color: rgb(17, 17, 17);">Phim đã có phụ đề</p>
+    <div class="note">
+      <div class="isub">
+        <a href="/phase1/iron-man-2008">
+          <img class="" style="width:100%" src="/img/3x4ironman1.jpg" alt="">
+        </a>
+        
+      </div>
+      <div class="nsub">
+        <p style="color: aliceblue"><a class="five" href="/phase1/ironman1">Iron Man (2008)</a></p>
+      </div>
+    </div>
+  </div>
 </div>
+        </div>
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+
+
+
+<!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "103106745700704");
+      chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <!-- Your SDK code -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          xfbml            : true,
+          version          : 'v13.0'
+        });
+      };
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

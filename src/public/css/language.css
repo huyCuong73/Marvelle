@@ -1,0 +1,43 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/* RADIO BOX */
+#radio-box {
+right: 5%;
+display: none;
+position: absolute;
+bottom: 7vh;
+border: rgb(97, 97, 97) solid;
+border-radius: 5px;
+overflow: hidden;
+background: rgba(29, 29, 29, 0.8);
+color:white;
+width: 11vmax;
+}
+.radio-box input[type=radio] {
+  display: none;
+}
+.radio-box label {
+  position: relative;
+  left: 0;
+  display: block;
+  border-bottom: black solid 1px ;
+  height: 5vmin;
+  cursor: pointer;
+  margin: 3px;
+  font: 1.2vmax serif;
+  border-radius: 5px;
+  color: #fdfeff;
+}
+.radio-box label p {
+  padding-left: 2px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+ 
+  transform: translate(0, -50%);
+}
+.radio-box input[type=radio]:checked + label {
+  vertical-align: middle;
+  background: #464646;
+  color: #ffffff;
+}

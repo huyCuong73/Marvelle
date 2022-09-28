@@ -1,114 +1,557 @@
- <div class="mt-4 container-fluid">
-    <div class="row col-lg-12">
-        <div class="col-lg-9">
-            <div class = "video" >
-                <video id="videoPlayer" height="90%" width="100%" controls loop autoplay>
-                    <source src="/video/s.mp4" type="video/mp4" />
-                    <track label="English" kind="subtitles" srclang="en" src="/sub/sub.vtt">
-                    </video>
-            </div>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    {{!-- <meta name="viewport" content="user-scalable=yes, initial-scale=1.0, width=device-width" /> --}}
+    <link rel="shortcut icon" href="/icon/final.ico" />
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/videoLoader.css">
+    <link rel="stylesheet" href="/css/note.css">
+    <link rel="stylesheet" href="/css/donate.css">
+    <link rel="stylesheet" href="/css/language.css">
+  <meta property="og:image" content="https://image.thanhnien.vn/w660/Uploaded/2022/pwivoviu/2019_03_11/marvel_dtnw.jpg"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MARVELEnglishLearing | Học tiếng anh qua phim Marvel</title>
+  {{!-- <meta property="og:title" content="mot cai j dday ne"> --}}
+  <meta property="og:description" content="Học tiếng anh qua phim Marvel với phụ đề chi tiết">
+    <link href="https://vjs.zencdn.net/7.15.4/video-js.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9X05E589LK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-9X05E589LK');
+</script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Man (2008)</title>
+    <meta name="description" content="h?c ti?ng anh qua ph? d? song ng? | Phim Ironman 2008" />
+    <meta property="og:title" content="Iron Man (2008)" />
+    <meta property="og:url" content="https://marvelenglishlearning.com/phase1/ironman1" />
+    <meta property="og:description" content="H?c ti?ng anh qua b? phim {{movies.name}}" />
+    <meta property="og:image" content="https://marvelenglishlearning.com/img/1.1.jpg" />
+</head>
+<body>
+    
+    <div class="showvideo ">
+        <a href="/" class="mt-1 back-botton title-mv"><img src="/icon/back-button.svg" alt=""></a>
+        <div class="title-mv">
+            <h1 class="mt-1" style="padding-left:20px; padding-top: 5px; margin: 0 ; color:rgb(209, 209, 209)">{{movies.name}}</h1>
         </div>
-        <div class=" col-lg-3   ">
-            <div id="speaking" aria-live="rude">
-            </div>
-            <div id="transcriptContainer" class="lol">
-                <div id="transcriptText" class="a">
-                    <p id="c1" class="cue" data-time="0.0" aria-live="rude" tabindex="1">
-                        Mine & Tolga Wedding First Dance 13.12.2014
-                    </p>
-                    <p id="c2" class="cue" data-time="3.0"  tabindex="1">
-                        Fly me to the moon
-                        <p id="c3" class="cue" data-time="6.0"  tabindex="1">
-                            And let me play among the stars
-                        </p>
-                        <p id="c4" class="cue" data-time="11.0" tabindex="1">
-                            Let me see what spring is like
-                        </p>
-                        <p id="c5" class="cue" data-time="14.0" tabindex="1">
-                            On Jupiter and Mars
-                        </p>
-                        <p id="c6" class="cue" data-time="19.0" aria-live="rude"tabindex="1">
-                            In other words hold my hand
-                        </p>
-                        <p id="c7" class="cue" data-time="27.0"  tabindex="1">
-                            In other words baby kiss me
-                        </p>
-                        <p id="c8" class="cue" data-time="35.0"  tabindex="1">
-                            Fill my life with song
-                        </p>
-                        <p id="c9" class="cue" data-time="38.0"  tabindex="1">
-                            And let me sing forevermore
-                        </p>
-                        <p id="c10" class="cue" data-time="44.0" tabindex="1">
-                            You are all I hope for
-                        </p>
-                        <p id="c11" class="cue" data-time="47.0" tabindex="1">
-                            All I worship and adore
-                        </p>
-                        <p id="c12" class="cue" data-time="52.0" aria-live="rude"tabindex="1">
-                            In other words please be true
-                        </p>
-                        <p id="c13" class="cue" data-time="60.0"  tabindex="1">
-                            In other words I love you
-                        </p>
-                        <p id="c13" class="cue" data-time="60.0"  tabindex="1">
-                            In other words I love you
-                        </p>
-                        <p id="c13" class="cue" data-time="60.0"  tabindex="1">
-                            In other words I love you
-                        </p>
-                        <p id="c13" class="cue" data-time="60.0"  tabindex="1">
-                            In other words I love you
-                        </p>
+        <div class="mt-2 container-fluid">
+            <div class="row row2">
+                <div class="col-lg-8 v" id="v">
+                    <div onclick="play3()" class="video a1">
+                        <video src="/video/{{movies.film}}" id="videoPlayer" ontimeupdate="playTranscript()" width="100%">
+                            <div class="center">
+
+                            </div>
+                        </video>
+                            <div class="center">
+                                <div id="ring"></div>
+                                <span id="load" style="font-size: 1.2vw; font-weight:10vw;">Loading...</span>
+                                <div id="play2">
+                                    <img src="/icon/playic-screen.svg">
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class="allsubVideo" id="allsubVideo">
+                        <p class="engsubVideo sv" id="engsubVideo"></p>
+                        <p class="vietsubVideo sv" id="vietsubVideo"></p>
+                    </div>
+   
+                    <div class="radio-box" id="radio-box">	
+                        <input type="radio" name="language" id="radio-1"  checked/><label for="radio-1"><p>Phụ đề song ngữ</p></label>
+                        <input type="radio" name="language" id="radio-2"  /><label for="radio-2"><p>Tiếng Việt</p></label>
+                        <input type="radio" name="language" id="radio-3"  /><label for="radio-3"><p>Tiếng Anh</p></label>
+                        <input type="radio" name="language" id="radio-4"  /><label for="radio-4"><p>Tăt</p></label>
+                    </div>
+                    <div class="playerButtons">
+                        <div class="insidePlayerButtons">
+                            <div class="timeControl">
+                                <button id="playpausebtn" style="display: none;"></button>
+                                
+
+                                <input id="range" type="range" min="0" max="100" value="0" step="1">
+
+
+                            </div>
+                     
+                            
+                            <div id="videoTime">0:00:00</div>
+                            <small style="color: aliceblue;">|</small>
+                            <div id="videoDuration">{{movies.duration}}</div> 
+
+
+                            <div class="control-video" style=" margin-left:0%;"><button class="" id="btnRewind" onclick="forwardRewind(-5)"><img src="/icon/rewind.svg" alt=""></button></div>
+
+                            <div class="control-video"><button id="btnPlay" onclick="play()"><img src="/icon/playButton.svg" alt=""></button></div>
+
+                            <div class="control-video"><button id="btnRewind" onclick="forwardRewind(5)"</button class=""><img src="/icon/forward.svg" alt=""></button></div>
+
+                            <div class="control-video mar" style=""><button id="volume" ><img src="/icon/unmute.svg" alt=""></button></div>
+
+
+                            <div class="control-video controls-sub" style = "width: 10%">
+                                <button class="" id="oos" ><img src="/icon/on-sub.svg"></button>
+
+                            </div>
+                            <div class="control-video fs" style = ""><button id="goFS" onclick="toggleFullScreen()"><img src="/icon/fullsr.svg" alt=""></button></div>
+                            
+
+                            {{!-- <input id="range" type="range" min="0" max="100" value="100" step="1"> --}}
                         </div>
                     </div>
-                    <script>
-                        window.onload = function() {
-                            // get video element
-                            var video = document.getElementsByTagName("video")[0];
-                            var transcript = document.getElementById("transcriptContainer");
-                            var trans_text = document.getElementById("transcriptText");
-                            var speaking = document.getElementById("speaking");
-                            var current = -1;
-
-                            // register events for the clicks on the text
-                            var cues = document.getElementsByClassName("cue");
-                            for (i=0; i<cues.length; i++) {
-                                cues[i].addEventListener("click", function(evt) {
-                                    var start = parseFloat(this.getAttribute("data-time"));
-                                    video.currentTime = start;
-                                    video.play();
-                                }, false);
-                            }
-
-                            // pause video as you mouse over transcript
 
 
-                            video.addEventListener("timeupdate", function(evt) {
-                                if (video.paused || video.ended) {
-                                    return;
-                                }
-                                // scroll to currently playing time offset
-                                for (i=0; i<cues.length; i++) {
-                                    var cueTime = cues[i].getAttribute("data-time");
-                                    if (cues[i].className.indexOf("current") == -1 &&
-                                    video.currentTime >= parseFloat(cueTime) &&
-                                    video.currentTime < parseFloat(cueTime)) {
-                                        trans_text.scrollTop =
-                                        cues[i].offsetTop - trans_text.offsetTop;
-                                        if (current >= 0) {
-                                            cues[current].classList.remove("current");
-                                        }
-                                        cues[i].className += " current";
-                                        current = i;
-                                        if (cues[i].getAttribute("aria-live") == "rude") {
-                                            speaking.innerHTML = cues[i].innerHTML;
-                                        }
-                                    }
-                                }
-                            }, false);
-                        };
+                    <script type="text/javascript">
+                        var a1 = document.getElementsByClassName("a1")
+                        var video = document.getElementById('videoPlayer')
+                        var loader = document.getElementById('ring')
+                        var loading = document.getElementById('load')
+                        var parent = loader.parentElement
+                        
+                        var oos = document.getElementById("oos");
+                        var allsubVideo = document.getElementById("allsubVideo");
+
+
+                        video.addEventListener('waiting', (event) => {
+                            loader.style.setProperty('display', 'initial');
+                            loading.style.setProperty('display', 'initial');
+                        });
+
+                        video.addEventListener('timeupdate', (event) => {
+                            loader.style.display = "none"
+                            loading.style.display = "none"
+                        });
+
                     </script>
+
+                    <script type="text/javascript">
+
+                        function play() {
+                            var videoPlayer = document.getElementById("videoPlayer");
+                            var btnPlay = document.getElementById("btnPlay");
+                            var videoTime = document.getElementById("videoTime");
+                            var videoDuration = document.getElementById("videoDuration");
+                            var range = document.getElementById("range");
+                            var playscr = document.getElementById("play2");
+                            if (videoPlayer.paused) {
+                                videoPlayer.play();
+                                btnPlay.innerHTML = '<img src="/icon/pauseButton2.svg">'
+                                playscr.innerHTML = ''
+                            } else {
+                                videoPlayer.pause();
+                                btnPlay.innerHTML = '<img src="/icon/playButton.svg">'
+                                playscr.innerHTML = '<img src="/icon/playic-screen.svg">'
+                            }
+                        };
+
+                        function play3() {
+                            var videoPlayer = document.getElementById("videoPlayer");
+                            var btnPlay = document.getElementById("btnPlay");
+                            var videoTime = document.getElementById("videoTime");
+                            var videoDuration = document.getElementById("videoDuration");
+                            var range = document.getElementById("range");
+                            var playscr = document.getElementById("play2");
+                            if (videoPlayer.paused) {
+                                videoPlayer.play();
+                                btnPlay.innerHTML = '<img src="/icon/pauseButton2.svg">'
+                                playscr.innerHTML = ''
+                            } else {
+                                videoPlayer.pause();
+                                btnPlay.innerHTML = '<img src="/icon/playButton.svg">'
+                                playscr.innerHTML = '<img src="/icon/playic-screen.svg">'
+                            }
+                        };
+
+
+                         function play2() {
+                            var videoPlayer = document.getElementById("videoPlayer");
+                            var playscr = document.getElementById("playscr");
+                            var btnPlay = document.getElementById("btnPlay");
+                            if (videoPlayer.paused) {
+                                videoPlayer.play();
+                                btnPlay.innerHTML = '<img src="/icon/pauseButton2.svg">'
+                                playscr.innerHTML = ''
+                            }
+                        }                       
+
+                        volume.addEventListener("click",function(){
+                            let videoPlayer = document.getElementById("videoPlayer");
+                            if (videoPlayer.volume == 0) {
+                                videoPlayer.volume = 1
+                                volume.innerHTML = '<img src="/icon/unmute.svg">'
+
+                            } else {
+                                videoPlayer.volume = 0
+                                volume.innerHTML = '<img src="/icon/mute.svg">'
+                            }
+                        })
+
+                        /*Function to Reload video from Beginning*/
+                        function reloadVideo() {
+                            var videoPlayer = document.getElementById("videoPlayer");
+                            videoPlayer.currentTime = 0;
+                        }
+                        /*Function to Forward & Rewind*/
+                        function forwardRewind(param) {
+
+                            videoPlayer.currentTime += param;
+                        }
+                        range.addEventListener('input', function () {
+                            var videoPlayer = document.getElementById("videoPlayer");
+                            videoPlayer.currentTime = range.value;
+                            videoPlayer.play();
+                            btnPlay.innerHTML = '<img src="/icon/pauseButton2.svg">'
+                            playscr.style.display = "none"
+                            console.log (videoPlayer.readyState)
+                            range.max = Math.floor(videoPlayer.duration);
+
+                        })
+                        videoPlayer.addEventListener('timeupdate', function () {
+                            var time= Math.floor(videoPlayer.currentTime);
+                            videoTime.innerHTML = formatTime(time);
+                            range.value = videoPlayer.currentTime;
+                            range.max = Math.floor(videoPlayer.duration);
+                        })
+                        window.onload = function () {
+                            videoTime.innerHTML = videoPlayer.currentTime;
+                            videoDuration.innerHTML = Math.floor(videoPlayer.duration);
+
+                        }
+                        function formatTime(time) {
+                            let hours = Math.floor(time / 3600)
+                            let minutes = Math.floor((time - hours * 3600)/60)
+                            let seconds = Math.floor(time - hours * 3600 - minutes * 60)
+
+                            let minuteValue, secondValue
+
+
+                            minuteValue = minutes < 10 ? '0' + minutes : minutes
+                            secondValue = seconds < 10 ? '0' + seconds : seconds
+
+                            let mediaTime =  hours + ":" + minuteValue + ':' + secondValue
+
+                            return mediaTime
+                        }
+                        function toggleFullScreen() {
+                            let fs = document.getElementById("goFS");
+                            var doc = window.document;
+                            var docEl = doc.documentElement;
+
+                            var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
+                            var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
+
+                            if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
+                                requestFullScreen.call(docEl);
+                                fs.innerHTML = '<img src="/icon/unfullsr.svg">'
+                                
+                            }
+                            else {
+                                cancelFullScreen.call(doc);
+                                fs.innerHTML = '<img src="/icon/fullsr.svg">'
+                            }
+                        }
+
+                    </script>
+
+
+
+
+
+
+
+
+
+
+                </div>
+                <div id="text" class="col-lg-4">
+                    <div >
+                        <form class="searchbox" action="">
+                            <input id="search" type="search" style="color:" placeholder="T�m ki?m ph? d?" />
+                        </form>
+                    </div>  
+                    {{>(sub)}}
+                    <div class="title-sup2" ></div>
+                </div>
             </div>
+        </div>
+
+        <script>
+            var searchbox = document.getElementById('search')
+            searchbox.addEventListener("keyup", function(event){
+                let sub = document.getElementsByClassName("script")
+                let line = document.querySelectorAll(".line")
+                let vs = document.getElementsByClassName("vietsubVideo")
+
+                var search = document.getElementById("search").value.toUpperCase();
+                for (var i = 0; i<line.length; i++){
+                    var match = line[i].getElementsByTagName('p')[0]
+                    if (match){
+                        var textvalue = match.textContent || match.innerHTML
+                        var index = textvalue.toUpperCase().indexOf(search)
+
+                        if ( index > -1){
+                            sub[i].style.display="";
+                            var innerHTML = match.innerText
+
+
+                        }else{
+                            var sv1 = document.getElementById('engsubVideo')
+                            var br = sv1.getElementsByTagName("br")
+
+
+                            sub[i].style.display="none"
+
+                            console.log(vs)
+                        }
+                    }
+                }
+            })
+
+        </script>
+
+        <script>
+
+            window.onload = function () {
+
+                var video = document.getElementsByTagName("video")[0];
+                var btnPlay = document.getElementById("btnPlay");
+                var transcript = document.getElementById("transcriptContainer");
+                var trans_text = document.getElementById("transcriptText");
+                var speaking = document.getElementById("speaking");
+                var dialogueTimings = [];
+                var current = -1;
+                var playscr = document.getElementById("play2");
+                // register events for the clicks on the text
+
+                var subboxes = document.getElementsByClassName("subbox");
+                for (i = 0; i < subboxes.length; i++) {
+                    subboxes[i].addEventListener("click", function (evt) {
+                        var start = this.getAttribute("data-time");
+                        var a = start.split(':'); 
+                        var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+                        video.currentTime = seconds;
+                        video.play(); 
+                        playscr.innerHTML =' '
+                    }, false);
+                }
+
+
+                var cues = document.getElementsByClassName("subbox");
+                console.log(cues.length)
+                video.addEventListener("timeupdate", function (evt) {
+                    if (video.paused || video.ended) {
+                        return;
+                    }
+                    // scroll to currently playing time offset
+                    for (i = 0; i < cues.length; i++) {     
+                        var cue = cues[i].getAttribute("data-time");
+                        var a = cue.split(':'); 
+                        var cueTime = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+
+                        if (cues[i].className.indexOf("current") == -1 &&
+                            video.currentTime >= cueTime &&
+                            video.currentTime < cueTime) {
+                            trans_text.scrollTop =
+                                cues[i].offsetTop - trans_text.offsetTop;
+                            if (current >= 0) {
+                                cues[current].classList.remove("current");
+                            }
+                            cues[i].className += " current";
+                            current = i;
+                            if (cues[i].getAttribute("aria-live") == "rude") {
+                                speaking.innerHTML = cues[i].innerHTML;
+                            }
+                        }
+                    }
+                },
+                    false);
+            };
+        </script>
+        <script>
+            var dialogueTimings2 = [];
+
+            var cues2 = document.getElementsByClassName("subbox");
+            for (i = 0; i < cues2.length; i++) {
+                var cue2 = cues2[i].getAttribute("data-time");
+                var a = cue2.split(':');
+                var cueTime2 = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+                dialogueTimings2.push(parseFloat(cueTime2))
+            }
+            console.log(dialogueTimings2);
+            dialogues = document.querySelectorAll('#box'),
+                transcriptWrapper = document.querySelector('#transcriptWrapper'),
+                audio = document.querySelector('#videoPlayer');
+            previousDialogueTime = -1;
+
+            function playTranscript() {
+
+                var currentDialogueTime = Math.max.apply(Math, dialogueTimings2.filter(function (v) { return v <= audio.currentTime }));
+
+                if (previousDialogueTime !== currentDialogueTime) {
+                    previousDialogueTime = currentDialogueTime;
+                    var currentDialogue = dialogues[dialogueTimings2.indexOf(currentDialogueTime)];
+
+                    transcriptWrapper.scrollTop = currentDialogue.offsetTop - 150;
+                    var previousDialogue = document.getElementsByClassName('highlight')[0];
+                    if (previousDialogue !== undefined)
+                        previousDialogue.className = previousDialogue.className.replace('highlight', '');
+                    currentDialogue.className += ' highlight';
+            btnPlay.innerHTML = '<img src="/icon/pauseButton2.svg">'
+                }
+
+            var subvideo = document.getElementsByClassName("engsubVideo")[0]
+            var vietsubvideo = document.getElementsByClassName("vietsubVideo")[0]
+            var only = document.getElementsByClassName("only")[0]
+            var time = document.getElementsByClassName('subbox')
+            var line = document.getElementsByClassName("line")
+
+            var approxTime = 0
+                var currentTime = audio.currentTime;
+                if (currentTime !== approxTime) {
+                    approxTime = currentTime;
+                    for (let i = 0; i < time.length; i++) {
+                            var text = time[i].getElementsByClassName("engsub")[0].innerText.split("\n")
+                            var viettext = time[i].getElementsByClassName("vietsub")[0].innerText.split("\n")
+                            var hms = time[i].getAttribute("data-time");
+                            var hmse = time[i].getAttribute("end-time");
+                            var a = hms.split(':');
+                            var b = hmse.split(':');
+                            var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+                            var secondse = (+b[0]) * 60 * 60 + (+b[1]) * 60 + (+b[2]);
+
+                        if (approxTime >= seconds && approxTime <= secondse) {
+                            subvideo.innerHTML = ""
+                            vietsubvideo.innerHTML = ""
+
+                            for (let i = 0; i < text.length; i++) {
+
+                                subvideo.append(text[i]);
+                                subvideo.innerHTML += "<br>"
+                                vietsubvideo.append(viettext[i]);
+                                vietsubvideo.innerHTML += "<br>"
+
+                            }
+                        }
+                        if(approxTime <time[i].seconds && approxTime > secondse){
+                                subvideo.style.display = "none"
+                                vietsubvideo.innerHTML = ""
+                                console.log("a")
+                        }
+                    }
+                }
+            };
+
+        </script>
+
+
+<script>
+    document.querySelectorAll('.moresub-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordionContent = button.nextElementSibling;
+
+            button.classList.toggle('moresub-button--active');
+
+            if (button.classList.contains('moresub-button--active')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            } else {
+                setTimeout(accordionContent.style.maxHeight = 0, 3000 );
+                accordionContent.style.maxHeight = 0;
+            }
+        })
+    });
+</script>
+<script>
+    var v = document.getElementById("v");
+    var playscr = document.getElementById("play2");
+    window.addEventListener('keydown',function(event){
+        if (event.keyCode === 39 ){
+            event.preventDefault();
+            videoPlayer.currentTime += 5;
+
+        }
+        if (event.keyCode === 32 ){
+           event.preventDefault();
+            btnPlay.style.border= "none"
+            
+            if (videoPlayer.paused) {
+                videoPlayer.play();
+                btnPlay.innerHTML = '<img src="/icon/pauseButton2.svg">';
+                playscr.innerHTML = '';
+            } else {
+                videoPlayer.pause();
+                btnPlay.innerHTML = '<img src="/icon/playButton.svg">';
+                playscr.innerHTML = '<img src="/icon/playic-screen.svg">';
+            }            
+        }
+        if (event.keyCode === 37 ){
+            event.preventDefault();
+            videoPlayer.currentTime -= 5;
+        }
+    })
+</script>
+
+
+
+        <!-- <video id="audio" ontimeupdate="playTranscript()"   height="100%" width="50%"  controls loop autoplay>
+  <source src="/video/s.mp4" type="video/mp4">
+  Your browser does not support the audio element.
+  </source>
+</video> -->
+
+        <!-- <script>
+
+
+var dialogueTimings = [];
+
+var cues = document.getElementsByClassName("cue");
+for (i=0; i<cues.length; i++) {
+        var cueTime = cues[i].getAttribute("data-time");
+        dialogueTimings.push( parseFloat(cueTime) )
+    }
+    console.log(dialogueTimings);
+    dialogues = document.querySelectorAll('#transcript>li'),
+    transcriptWrapper = document.querySelector('#transcriptWrapper'),
+    audio = document.querySelector('#audio');
+    previousDialogueTime = -1;
+
+ function playTranscript() {
+
+    var currentDialogueTime = Math.max.apply(Math, dialogueTimings.filter(function(v){return v <= audio.currentTime}));
+
+    if(previousDialogueTime !== currentDialogueTime) {
+        previousDialogueTime = currentDialogueTime;
+        var currentDialogue = dialogues[dialogueTimings.indexOf(currentDialogueTime)];
+        transcriptWrapper.scrollTop  = currentDialogue.offsetTop - 50;
+        var previousDialogue = document.getElementsByClassName('speaking')[0];
+        if(previousDialogue !== undefined)
+            previousDialogue.className = previousDialogue.className.replace('speaking','');
+        currentDialogue.className +=' speaking';
+    }
+}
+;
+
+</script> -->
+        {{>donate}}
     </div>
- </div>
+
+</body>
+</html>
+
+</html>
