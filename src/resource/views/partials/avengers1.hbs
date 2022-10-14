@@ -1,0 +1,187 @@
+<div class="title-sup">Phụ đề</div>  
+<div id="transcriptWrapper" class="lol">
+<div id="transcript" class="sub-color" class="show-sub" >
+
+<div class="outter" >
+    <div id="box" class="subbox" tabindex="1" data-time=87"" >
+        <div class="timesub " >
+            <div class="time"><small>1:27</small></div>
+            <div class="play-child"><img src="/icon/play.svg" alt=""></div>
+        </div>
+        <div class="sub ">
+            <div class="line">
+I feel like you're driving me to a court-martial.<br/>
+<i>
+Tôi cảm giác như các anh đang đưa tôi đến toà án quân sự vậy.
+</i>
+            </div>
+        </div>
+    </div>
+    <div class="more">
+        <button type="button" class="moresub-button"></button>
+        <div class="moresub" style="color: aliceblue;" >
+- drive sb/sth to somewhere: đưa ai/cái gì đến một nơi nào đó (bằng phương tiện).<br/>
+- courtd(n): tòa án.<br>
+- martial(adj): liên quan đến quân sự, chiến tranh.
+        </div>
+    </div>
+</div>
+
+
+
+<div class="outter" >
+    <div id="box" class="subbox" tabindex="1" data-time=87"" >
+        <div class="timesub " >
+            <div class="time"><small>1:27</small></div>
+            <div class="play-child"><img src="/icon/play.svg" alt=""></div>
+        </div>
+        <div class="sub ">
+            <div class="line">
+I feel like you're driving me to a court-martial.<br/>
+<i>
+Tôi cảm giác như các anh đang đưa tôi đến toà án quân sự vậy.
+</i>
+            </div>
+        </div>
+    </div>
+    <div class="more">
+        <button type="button" class="moresub-button"></button>
+        <div class="moresub" style="color: aliceblue;" >
+- drive sb/sth to somewhere: đưa ai/cái gì đến một nơi nào đó (bằng phương tiện).<br/>
+- courtd(n): tòa án.<br>
+- martial(adj): liên quan đến quân sự, chiến tranh.
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+    {{!-- <div class="playerButtons">
+        <div class="control-video"><button id="btnRewind" onclick="forwardRewind(-5)"><img src="/icon/rewind.svg" alt=""></button></div>
+        <div class="control-video"><button id="btnPlay" onclick="play()">play</button></div>
+        <div class="control-video"><button id="btnRewind" onclick="forwardRewind(5)"><img src="/icon/forward.svg" alt=""></button></div>
+        <div class="control-video controls-sup"><button>on/off sup</button></div>
+    </div>
+
+
+
+    <script type="text/javascript">
+    /*Function for Play & Pause Buttons*/
+    function play() {
+    var videoPlayer = document.getElementById("videoPlayer");
+    var btnPlay = document.getElementById("btnPlay");
+    if (videoPlayer.paused) {
+    videoPlayer.play();
+    btnPlay.textContent = "pause";
+    } else {
+    videoPlayer.pause();
+    btnPlay.textContent = "play";
+    }
+    }
+    /*Function to Reload video from Beginning*/
+    function reloadVideo() {
+    var videoPlayer = document.getElementById("videoPlayer");
+    videoPlayer.currentTime = 0;
+    }
+    /*Function to Forward & Rewind*/
+    function forwardRewind(param) {
+    var videoPlayer = document.getElementById("videoPlayer");
+    videoPlayer.currentTime += param;
+    }
+    </script> --}}
+
+
+<div class="title-sup2" "></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .outter  .moresub-button{
+    display: block;
+    width: 100%;
+    padding-left: 45%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: rgb(51, 50, 50) ;
+    color: #ffff;
+    text-align: left;
+    transition: background 0.2s;
+    border-top-style:solid;
+}
+
+.moresub-button::after{
+    content: '▼';
+    transform: scale(0.5);
+
+}
+
+.moresub-button--active::after{content: "▲"; }
+
+.moresub{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s;
+    padding: 0 20px;
+    width: 100%;
+    position:relative;
+    background-color: rgb(22, 22, 22);
+}
+</style>
+<script>
+    document.querySelectorAll('.moresub-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordionContent = button.nextElementSibling;
+
+            button.classList.toggle('moresub-button--active');
+
+            if (button.classList.contains('moresub-button--active')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+            } else {
+                setTimeout(accordionContent.style.maxHeight = 0, 3000 );
+                accordionContent.style.maxHeight = 0;
+            }
+        })
+    });
+</script>

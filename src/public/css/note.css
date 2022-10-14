@@ -1,0 +1,30 @@
+.filmsub {
+    position: absolute;
+    top: 3vh;
+    width: 29%;
+    text-align: center;
+    background-color: rgba(58, 58, 58, 0.5);
+    height: 120vmin;
+    display: inline-block;
+}
+
+.note {
+    padding-left: 1vw;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    height: fit-content;
+}
+
+.nsub>p {
+    padding-left: 1vw;
+    text-align: left;
+    font-size: 1.5vw;
+}
+
+a.five:link {color:#ff0000;text-decoration:none;}
+a.five:visited {color:#ffffff;text-decoration:none;}
+a.five:hover {color:#ff0000;font-size:120%;}
+
+.i:hover{
+    scale: 1.2;
+}
