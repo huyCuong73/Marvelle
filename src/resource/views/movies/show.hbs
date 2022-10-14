@@ -55,18 +55,20 @@
             <div class="row row2">
                 <div class="col-lg-8 v" id="v">
                     <div onclick="play3()" class="video a1">
-                        <video src="/video/{{movies.film}}" id="videoPlayer" ontimeupdate="playTranscript()" width="100%">
+                        <video src="https://firebasestorage.googleapis.com/v0/b/marv-ed6ff.appspot.com/o/1.mp4?alt=media&token=b35f49b9-c01d-4688-b063-2370f075fc7a" id="videoPlayer" ontimeupdate="playTranscript()" width="100%">
                             <div class="center">
 
                             </div>
                         </video>
-                            <div class="center">
-                                <div id="ring"></div>
-                                <span id="load" style="font-size: 1.2vw; font-weight:10vw;">Loading...</span>
-                                <div id="play2">
-                                    <img src="/icon/playic-screen.svg">
-                                </div>
+                        {{!-- <iframe src="https://www.youtube.com/embed/9YffrCViTVk?modestbranding=1&rel=0&cc_load_policy=1&iv_load_policy=3&fs=0&color=white&controls=0" width="100%" height="515" id="videoPlayer" ontimeupdate="playTranscript()" title="Embed a YouTube Video in HTML and Make it Responsive (CSS included)" frameborder="0"></iframe> --}}
+
+                        <div class="center">
+                            <div id="ring"></div>
+                            <span id="load" style="font-size: 1.2vw; font-weight:10vw;">Loading...</span>
+                            <div id="play2">
+                                <img src="/icon/playic-screen.svg">
                             </div>
+                        </div>
 
                     </div>
                     <div class="allsubVideo" id="allsubVideo">

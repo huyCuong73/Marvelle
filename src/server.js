@@ -4,11 +4,15 @@ const morgan = require('morgan')
 const exphbs = require('express-handlebars')
 const app = express();
 const http = require('http');
-const port = 443;
+const PORT = process.env.PORT || 80
 const routes = require('./routes/index.js')
 const jwt = require('jsonwebtoken')
 const fs = require('fs')
 const https = require('https')
+const mongoose = require( 'mongoose' )
+const dotenv = require('dotenv')
+
+dotenv.config();
 
 // const privateKey = fs.readFileSync('C:/Certbot/live/marvelenglishlearning.com/privkey.pem', 'utf8');
 // const certificate = fs.readFileSync('C:/Certbot/live/marvelenglishlearning.com/cert.pem', 'utf8');
@@ -26,6 +30,7 @@ const https = require('https')
 //     chain:chain
 // };
 
+const URI = 'mongodb+srv://marv:KkXhVkU3Ns4Z3iFj@cluster0.ltytqce.mongodb.net/?retryWrites=true&w=majority'
 
 var bodyParser = require('body-parser');
 // var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -33,9 +38,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const User = require('./app/models/user');
 
 
-const db = require('./config/db');
-const { required } = require('nodemon/lib/config');
-db.connect()
+// const db = require('./config/db');
+// const { required } = require('nodemon/lib/config');
+// db.connect()
 app.use(morgan('common'));
 const handlebars = exphbs.create({ extname: '.hbs', });
 app.engine('.hbs', handlebars.engine);
@@ -49,7 +54,14 @@ console.log(__dirname)
 // const server = https.createServer(credentials, app)
 
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+mongoose.connect(URI,{useNewUrlParser: true, useUnifiedTopology: true})
+    .then(() => {
+        console.log('connected');
+        app.listen(PORT, () => console.log(`server is running on port ${PORT}`))
+    })
+    .catch((err) => {
+        console.log('err',err);
+    })
 
 // http.createServer(function(req, res) {
 //     res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
