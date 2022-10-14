@@ -28,10 +28,10 @@
     "passport-google-oidc": "^0.1.0",
     "passport-local": "^1.0.0",
     "subtitle": "^4.1.1",
-    "video.js": "^7.15.4"
+    "video.js": "^7.15.4",
+    "nodemon": "^2.0.20"
   },
   "devDependencies": {
-    "node-scss": "^7.0.3",
-    "nodemon": "^2.0.13"
+    "node-scss": "^7.0.3"
   }
 }
